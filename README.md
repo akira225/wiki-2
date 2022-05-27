@@ -1,6 +1,6 @@
 # wiki-2
 
-Запуск
+Запуск:
 docker-compose up --build --force-recreate
 
 Информация по API:
