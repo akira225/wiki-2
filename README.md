@@ -1,7 +1,7 @@
 # wiki-2
 
-Запуск:
+Запуск
 docker-compose up --build --force-recreate
 
 Информация по API:
-http://localhost:5000/apidocs/
+http://127.0.0.1:5000/apidocs/
