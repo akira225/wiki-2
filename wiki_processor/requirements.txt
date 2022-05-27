@@ -1,0 +1,2 @@
+pika==1.2.1
+Wikipedia_API==0.5.4

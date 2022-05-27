@@ -1,0 +1,30 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    network_mode: "host"
+
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+      - wiki
+    volumes:
+      - ./sqlite:/code/sqlite
+    network_mode: "host"
+
+  wiki:
+    build: 
+      context: ./wiki_processor
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./sqlite:/code/sqlite
+      - ./failed_requests:/code/failed_requests
+    deploy:
+      mode: replicated
+      replicas: 3
+    network_mode: "host"
