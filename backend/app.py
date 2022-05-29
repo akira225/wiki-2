@@ -11,6 +11,7 @@ from api_docks import *
 from flasgger import Swagger, swag_from
 from WikiRpcClient import WikiRpcClient
 
+time.sleep(12)
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite/baza.db'
 app.config["JWT_SECRET_KEY"] = "Yijf341isdHYG66YT757huPgh86788jioo38aldsFDDRY7867"
@@ -169,5 +170,4 @@ def ban_node():
 
 
 if __name__ == '__main__':
-    time.sleep(12)
     app.run()
