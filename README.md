@@ -1,7 +1,9 @@
 # wiki-2
 
 Запуск:
-docker-compose up --build --force-recreate
-
+docker-compose up --build --force-recreate  
+  
+Все контейнеры подключаются к host сети, поэтому существует вероятность ошибки (не проверялось), если на хосте есть уже работающий rabbitmq.  
+  
 Информация по API:
 http://127.0.0.1:5000/apidocs/
